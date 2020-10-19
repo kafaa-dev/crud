@@ -2,7 +2,7 @@
 // konek ke database
 $konek = mysqli_connect("localhost", "root", "", "crud")
 ?>
-<html>
+<htmla>
 <head>
 <link rel="stylesheet" href="style/tampil.css">
     <title>Daftar Pesanan</title>
