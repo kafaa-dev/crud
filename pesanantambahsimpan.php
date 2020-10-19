@@ -17,4 +17,4 @@ mysqli_query($konek,"INSERT into pesanan values('$kodePesanan', '$nm_pengirim','
  
 // mengalihkan halaman kembali ke index.php
 header("location:pesanantampil.php");
-?>
+?>a
