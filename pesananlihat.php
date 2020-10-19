@@ -1,4 +1,4 @@
-<?php
+<?phpa
 // konek ke database
 $konek = mysqli_connect("localhost", "root", "", "crud");
 
