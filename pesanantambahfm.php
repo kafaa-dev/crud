@@ -1,4 +1,4 @@
-<?php
+<?phpa
     include "koneksi.php";
     $sql = "SELECT * FROM pesanan ORDER BY id_pesanan";
     $qry = mysqli_query($konek, $sql)or die ("Gagal query");
