@@ -1,4 +1,4 @@
-<?php
+<?phpa
 $konek = mysqli_connect("localhost","root","","crud");
 
 // ambil variabel yang dikirim dari form
