@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump ing
+-- phpMyAdmin SQL Dump
 -- version 3.2.0.1
 -- http://www.phpmyadmin.net
 --
