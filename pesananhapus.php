@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";a
+include "koneksi.php";
 
 $id  = $_GET['id'];
 $hapus = "DELETE FROM pesanan WHERE id_pesanan='$id'";
