@@ -74,7 +74,7 @@ function myFunction() {
 
     <tr>
     <td align="right">Harga :</td>
-    <td><div class="as"><div><div><b style="color: rgba(0,0,0,.54);">Rp.</b></div><input id="harga" class="bg" name="harga" onkeyup="myFunction();" type="text" size="46" maxlength="40" required="required"></div></div></td>
+    <td><div class="as"><div><div><b style="color: rgba(0,0,0,.54);">Rp.</b></div><input id="harga" class="bg" name="harga" onkeyup="myFunction();" type="number" size="46" maxlength="40" required="required"></div></div></td>
     </tr>
     
     <tr>
