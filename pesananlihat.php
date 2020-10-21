@@ -24,9 +24,10 @@ echo "$data[nm_pengirim] mempunyai pesanan dari $data[nm_penerima],
 <br /><br />
 <table border="1" cellspacing="0" cellpadding="10">
     <tr align="center">
+        <td><b>Marketplace</b></td>
         <td><b>Pengirim</b></td>
         <td><b>Penerima</b></td>
-        <td><b>Nama Barang</b></td>
+        <td><b>Nama Barang</b></td>        
         <td><b>Alamat</b></td>
         <td><b>Jasa Kirim</b></td>
         <td><b>Harga</b></td>
@@ -36,11 +37,11 @@ echo "$data[nm_pengirim] mempunyai pesanan dari $data[nm_penerima],
 
 <?php
 echo "<form method=\"GET\" action=\"#\">
-    <input type=\"hidden\" name=\"id\" VALUE=\"$id\">
     <tr bgcolor=#FFFFFF>
+    <td>$data[marketplace]</td> 
     <td>$data[nm_pengirim]</td>
     <td>$data[nm_penerima]</td>
-    <td>$data[nm_barang]</td>
+    <td>$data[nm_barang]</td>   
     <td>$data[alamat]</td>
     <td>$data[jasa_kirim]</td>
     <td><p>Rp. ".number_format($data[harga], 0, '', '.').",-<br></td>
