@@ -1,9 +1,3 @@
-<html>
-<head>
-    <link rel="stylesheet" href="style/tambahfm.css" type="text/css">
-    <title>Ubah Pesanan</title>
-</head>
-</html>
 <?php
 $konek = mysqli_connect("localhost","root","","crud");
 
@@ -13,7 +7,43 @@ $id    = $_GET['id'];
 $edit  = "SELECT * FROM pesanan WHERE id_pesanan='$id'";
 $hasil = mysqli_query($konek, $edit);
 $data  = mysqli_fetch_array($hasil);
+?>
+<?php
+if ($data[marketplace]=="Bukalapak") {
+    $Bukalapak = "checked";
+    $Tokopedia = "";
+    $Shopee = "";
+    $Lazada = "";
+}
 
+if ($data[marketplace]=="Tokopedia") {
+    $Bukalapak = "";
+    $Tokopedia = "checked";
+    $Shopee = "";
+    $Lazada = "";
+}
+
+if ($data[marketplace]=="Shopee") {
+    $Bukalapak = "";
+    $Tokopedia = "";
+    $Shopee = " checked";
+    $Lazada = "";
+}
+
+if ($data[marketplace]=="Lazada") {
+    $Bukalapak = "";
+    $Tokopedia = "";
+    $Shopee = "";
+    $Lazada = "checked";
+}
+?>
+<html>
+<head>
+    <link rel="stylesheet" href="style/tambahfm.css" type="text/css">
+    <title>Ubah Pesanan</title>
+</head>
+</html>
+<?php
 
 echo "<form method=\"GET\" action=\"pesananubahsim.php\">
       <input type=\"hidden\" name=\"id\" VALUE=\"$id\">
@@ -22,6 +52,14 @@ echo "<form method=\"GET\" action=\"pesananubahsim.php\">
       <tr><td align=\"right\">Nama Pengirim :</td><td><input size=\"50\" maxlength=\"50\" type=\"text\" name=\"nm_pengirim\" value=\"$data[nm_pengirim]\"></td></tr>
       <tr><td align=\"right\">Nama Penerima :</td><td><input size=\"50\" maxlength=\"50\" type=\"text\" name=\"nm_penerima\" value=\"$data[nm_penerima]\" required=\"required\"></td></tr>
       <tr><td align=\"right\">Nama Barang :</td><td><input type=\"text\" name=\"nm_barang\" size=\"50\" maxlength=\"100\" value=\"$data[nm_barang]\" required=\"required\"></td></tr>
+      <tr><td align=\"right\"><label for=\"marketplace\">Marketplace</label></td>
+      <td>
+          <input type=\"radio\" id=\"Bukalapak\" value=\"Bukalapak\" name=\"marketplace\" $Bukalapak><label for=\"Bukalapak\">Bukalapak</label>
+          <input type=\"radio\" id=\"Tokopedia\" value=\"Tokopedia\" name=\"marketplace\" $Tokopedia><label for=\"Tokopedia\">Tokopedia</label>
+          <input type=\"radio\" id=\"Shopee\" value=\"Shopee\" name=\"marketplace\" $Shopee><label for=\"Shopee\">Shopee</label>
+          <input type=\"radio\" id=\"Lazada\" value=\"Lazada\" name=\"marketplace\" $Lazada><label for=\"Lazada\">Lazada</label>
+      </td>
+      </tr>
       <tr><td align=\"right\">Jasa Kirim :</td><td><input type=\"text\" name=\"jasa_kirim\" size=\"50\" maxlength=\"40\" value=\"$data[jasa_kirim]\" required=\"required\"></td></tr>
       <tr><td align=\"right\">Harga :</td><td><div class=\"as\"><div><b>Rp. </b><input class=\"bg\" name=\"harga\" value=\"$data[harga]\" type=\"number\" size=\"46\" maxlength=\"40\" required=\"required\"></div></div></td></tr>
       <tr><td align=\"right\">Jumlah Beli :</td><td><input type=\"number\" name=\"jumlah_beli\" value=\"$data[jumlah_beli]\" required=\"required\"></td></tr>
