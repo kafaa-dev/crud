@@ -1,17 +1,19 @@
 <?php
 // konek ke database
-$konek = mysqli_connect("localhost", "root", "", "crud")
+$konek = mysqli_connect("localhost", "root", "", "crud");
 ?>
 <html>
 <head>
-<link rel="stylesheet" href="style/tampil.css">
+    <link rel="stylesheet" href="style/tampil.css">
     <title>Daftar Pesanan</title>
 </head>
 <body>
 <form action="pesanantambahfm.php">
 <input class="button" type="submit" style="font-weight: bold;" value="Tambah Pesanan">
 </form>
-<table border="1" cellspacing="0" cellpadding="6">
+<form action="pesanantampil.php" method="get">
+<table id="myTable" border="1" cellspacing="0" cellpadding="6">
+</form>
     <tr>
         <td colspan="100%"><b>Daftar Pesanan</b></td>
     </tr>
@@ -20,7 +22,7 @@ $konek = mysqli_connect("localhost", "root", "", "crud")
         <td>Pengirim</td>
         <td>Penerima</td>
         <td>Nama Barang</td>
-     
+        <td>Marketplace</td>
         <td>Jasa Kirim</td>
         <td>Harga</td>
         <td>Jumlah Beli</td>
@@ -38,7 +40,7 @@ echo "<tr bgcolor=#FFFFFF>
     <td>$data[nm_pengirim]</td>
     <td>$data[nm_penerima]</td>
     <td>$data[nm_barang]</td>
-    
+    <td>$data[marketplace]</td>
     <td>$data[jasa_kirim]</td>
     <td><p>Rp. ".number_format($data[harga], 0, '', '.')."<br></td>
     <td>$data[jumlah_beli]</td>
@@ -50,7 +52,6 @@ echo "<tr bgcolor=#FFFFFF>
         $no++;
 }
 ?>
-
 </table>
 </body>
 </html>
