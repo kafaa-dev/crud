@@ -1,6 +1,5 @@
 <?php
-// konek ke database
-$konek = mysqli_connect("localhost", "root", "", "crud");
+// konek ke databasanect("localhost", "root", "", "crud");
 ?>
 <html>
 <head>
