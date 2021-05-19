@@ -3,8 +3,8 @@
     $sql = "SELECT * FROM pesanan ORDER BY id_pesanan";
     $qry = mysqli_query($konek, $sql)or die ("Gagal query");
     $data = mysqli_fetch_array($qry);
-    $harga = $data[harga];
-    $jumlah_beli = $data[jumlah_beli];
+    $harga = $data["harga"];
+    $jumlah_beli = $data["jumlah_beli"];
         
     $query = mysqli_query($konek, "SELECT max(id_pesanan) as kodeTerbesar FROM pesanan");
     $data1 = mysqli_fetch_array($query);
