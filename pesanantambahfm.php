@@ -1,5 +1,4 @@
 <?php
-/*
     include "koneksi.php";
     $sql = "SELECT * FROM pesanan ORDER BY id_pesanan";
     $qry = mysqli_query($konek, $sql)or die ("Gagal query");
@@ -9,6 +8,7 @@
         
     $query = mysqli_query($konek, "SELECT max(id_pesanan) as kodeTerbesar FROM pesanan");
     $data1 = mysqli_fetch_array($query);
+
     $kodePesanan = $data1['kodeTerbesar'];
 
     $urutan = (int) substr($kodePesanan, 9, 9);
@@ -16,7 +16,6 @@
 
     $huruf = "PSN";
     $kodePesanan = $huruf . sprintf("%09s", $urutan);        
-*/
 ?>
 <html>
 <head>
